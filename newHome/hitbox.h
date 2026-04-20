@@ -12,4 +12,5 @@ public:
     ~hitbox() = default;
 
     bool collision(hitbox oppositeHitbox);
+    bool click(sf::RenderWindow& window);
 };
