@@ -12,7 +12,7 @@ public:
 
     enum class fontsIndices
     {
-        //fonts
+        fingerPaint
     };
 
     enum class musicsIndices

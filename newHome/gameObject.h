@@ -1,13 +1,51 @@
 #pragma once
 
 #include "utils.h"
+#include "component.h"
 
 class gameObject
 {
-public:
-    gameObject() = default;
-    virtual ~gameObject() = default;
+private:
+    sf::Vector2f position;
+    sf::Vector2f size;
+    std::vector<component*> components = {};
 
-    virtual void update(float deltaTime) = 0;
-    virtual void draw(sf::RenderWindow& window) = 0;
+public:
+    gameObject(sf::Vector2f _position, sf::Vector2f _size);
+    ~gameObject();
+
+    void update(float deltaTime);
+    void draw(sf::RenderWindow& window);
+
+    void addComponent(component* newComponent);
+
+    template <typename T> T* getComponent()
+    {
+    for (auto comp : components)
+    {
+        auto* downcastComponent = dynamic_cast<T*>(comp);
+        if (downcastComponent != nullptr)
+        {
+            return downcastComponent;
+        }
+    }
+    return nullptr;
+    }
+
+    template <typename T> bool hasComponent()
+    {
+    for (auto comp : components)
+    {
+        if (auto* downcastComponent = dynamic_cast<T*>(comp) != nullptr)
+        {
+            return true;
+        }
+    }
+    return false;
+    }
+
+    sf::Vector2f getPosition();
+    void setPosition(sf::Vector2f newPosition);
+    sf::Vector2f getSize();
+    void setSize(sf::Vector2f newSize);
 };

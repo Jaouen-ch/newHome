@@ -7,7 +7,7 @@ int main()
     auto window = sf::RenderWindow(sf::VideoMode({ WINDOW_WIDTH, WINDOW_HEIGHT }), "Mini Studio", sf::Style::Default, sf::State::Windowed, settings);
     window.setVerticalSyncEnabled(true);
 
-    auto currentGameLoop = gameLoop();
+    auto currentGameLoop = gameLoop(window);
 
     while (window.isOpen())
     {

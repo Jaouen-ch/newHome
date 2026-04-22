@@ -44,7 +44,7 @@ void assetsHandler::loadAllTextures()
 
 void assetsHandler::loadAllFonts()
 {
-    //fonts
+    loadFont(fontsIndices::fingerPaint, "assets/FingerPaint.ttf");
 }
 
 void assetsHandler::loadAllMusics()

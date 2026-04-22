@@ -1,7 +1,9 @@
 #pragma once
 
-#include "entity.h"
-#include "utils.h"
+#include "gameObject.h"
+#include "rendererComponent.h"
+#include "colliderComponent.h"
+#include "clickableComponent.h"
 
 class gameLoop
 {
@@ -11,10 +13,10 @@ private:
     sf::Time lastTime;
     float deltaTime = 0.0f;
 
-    std::vector<gameObject*> objects = {};
+    std::vector<gameObject> objects = {};
 
 public:
-    gameLoop() = default;
+    gameLoop(sf::RenderWindow& window);
     ~gameLoop() = default;
 
     void eventsHandler(sf::RenderWindow& window, const std::optional<sf::Event>& event);
