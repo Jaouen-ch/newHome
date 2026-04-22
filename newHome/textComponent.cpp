@@ -29,3 +29,9 @@ void textComponent::setText(sf::String newText)
 {
     text.setString(newText);
 }
+
+void textComponent::setPosition(sf::Vector2f newPosition)
+{
+    positionDifference = newPosition - owner->getPosition();
+    text.setPosition(owner->getPosition() + positionDifference);
+}

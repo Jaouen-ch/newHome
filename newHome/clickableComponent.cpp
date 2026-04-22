@@ -2,6 +2,7 @@
 
 #include "counterComponent.h"
 #include "counterModifierComponent.h"
+#include "evolutionComponent.h"
 
 clickableComponent::clickableComponent(gameObject* _owner, sf::RenderWindow* _window, float _delay)
     : component(_owner)
@@ -33,10 +34,15 @@ void clickableComponent::update(float deltaTime)
     }
     if (click)
     {
-        auto comp = owner->getComponent<counterModifierComponent>();
-        if (comp != nullptr)
+        auto counterModifierComp = owner->getComponent<counterModifierComponent>();
+        auto evolutionComp = owner->getComponent<evolutionComponent>();
+        if (counterModifierComp != nullptr)
         {
-            comp->setCount(comp->getCount() + 1);
+            counterModifierComp->setCount(counterModifierComp->getCount() + 1);
+        }
+        if (evolutionComp != nullptr)
+        {
+            evolutionComp->evolution();
         }
     }
     if (wasButtonLeftPressed && !sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))

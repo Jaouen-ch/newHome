@@ -40,11 +40,24 @@ assetsHandler::~assetsHandler()
 void assetsHandler::loadAllTextures()
 {
     loadTexture(texturesIndices::defaultTexture, "assets/defaultTexture.png");
+    loadTexture(texturesIndices::space, "assets/space.png");
+    loadTexture(texturesIndices::stone, "assets/stone.png");
+    loadTexture(texturesIndices::planet1, "assets/planet1.png");
+    loadTexture(texturesIndices::planet2, "assets/planet2.png");
+    loadTexture(texturesIndices::planet3, "assets/planet3.png");
+    loadTexture(texturesIndices::planet4, "assets/planet4.png");
+    loadTexture(texturesIndices::planet5, "assets/planet5.png");
+    loadTexture(texturesIndices::planet6, "assets/planet6.png");
+    loadTexture(texturesIndices::baren, "assets/baren.png");
+    loadTexture(texturesIndices::blackHole, "assets/blackHole.png");
+    loadTexture(texturesIndices::ice, "assets/ice.png");
+    loadTexture(texturesIndices::lava, "assets/lava.png");
+    loadTexture(texturesIndices::terran, "assets/terran.png");
 }
 
 void assetsHandler::loadAllFonts()
 {
-    loadFont(fontsIndices::fingerPaint, "assets/FingerPaint.ttf");
+    loadFont(fontsIndices::space, "assets/SPACE.ttf");
 }
 
 void assetsHandler::loadAllMusics()

@@ -15,4 +15,6 @@ public:
 
     void update(float deltaTime) override;
     void draw(sf::RenderWindow& window) override;
+
+    void setTexture(assetsHandler::texturesIndices index);
 };

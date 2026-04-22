@@ -18,4 +18,5 @@ public:
     void draw(sf::RenderWindow& window) override;
 
     void setText(sf::String newText);
+    void setPosition(sf::Vector2f newPosition);
 };

@@ -19,3 +19,8 @@ void rendererComponent::draw(sf::RenderWindow& window)
 {
     window.draw(sprite);
 }
+
+void rendererComponent::setTexture(assetsHandler::texturesIndices index)
+{
+    sprite.setTexture(assetsHandler::getAssets()->getTexture(index));
+}

@@ -7,12 +7,25 @@ class assetsHandler
 public:
     enum class texturesIndices
     {
-        defaultTexture
+        defaultTexture,
+        space,
+        stone,
+        planet1,
+        planet2,
+        planet3,
+        planet4,
+        planet5,
+        planet6,
+        baren,
+        blackHole,
+        ice,
+        lava,
+        terran,
     };
 
     enum class fontsIndices
     {
-        fingerPaint
+        space
     };
 
     enum class musicsIndices
